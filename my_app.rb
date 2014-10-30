@@ -224,7 +224,6 @@ end
 
 get '/image/:name' do
   require_params :name
-
   image_name = "#{params[:name]}.png"
   image_path = File.expand_path(image_name, settings.public_folder)
 
