@@ -94,7 +94,7 @@ post '/status/update' do
   DB.transaction do
 
     lowName = params[:name].downcase
-    lowName = 'steven' if lowName == 'stevenf'
+    lowName = 'alison' if lowName == 'alison lapré'
 
     person = Person.for_update.first(:name => lowName)
 
@@ -152,7 +152,7 @@ post '/message/in' do
   require_params :name, :message
 
   lowName = params[:name].downcase
-  lowName = 'steven' if lowName == 'stevenf'
+  lowName = 'alison' if lowName == 'alison lapré'
 
   sender = Person.first(:name => lowName)
   in_people = Person.where(:status => 'In')
